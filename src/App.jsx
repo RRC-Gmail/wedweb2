@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Outlet, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Outlet, Link } from 'react-router-dom';
 
 import Hero from './components/Hero';
 import RsvpForm from './components/RsvpForm';
@@ -70,7 +70,7 @@ const DashboardLayout = () => {
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<PublicLayout />}>
@@ -97,7 +97,7 @@ function App() {
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   );
 }

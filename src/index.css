@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sand-50: #fcfbf9;
+  --color-sand-100: #f4ede4;
+  --color-sand-200: #e8dcb8;
+  --color-sand-800: #594a36;
+  --color-sand-900: #3b3022;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-sand-50);
+  color: var(--color-sand-900);
+}

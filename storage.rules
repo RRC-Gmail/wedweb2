@@ -1,0 +1,12 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /guestbook/{allPaths=**} {
+      // Allow anyone to read guestbook images/videos
+      allow read: if true;
+      // Allow anyone to upload, but restrict size to 20MB and enforce images/videos
+      allow write: if request.resource.size < 20 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*|video/.*');
+    }
+  }
+}
